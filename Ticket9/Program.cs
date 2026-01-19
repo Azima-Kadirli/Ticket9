@@ -18,6 +18,7 @@ namespace Ticket9
             });
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
             {
+                options.User.RequireUniqueEmail = true;
 
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
