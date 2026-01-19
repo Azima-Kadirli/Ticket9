@@ -63,6 +63,25 @@
                     <li><a href="#team" class="smoothScroll">Chef</a></li>
                     <li><a href="#menu" class="smoothScroll">Menu</a></li>
                     <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a class="nav-item">@User.Identity.Name</a>
+                        </li>
+                        <li>
+                        <a class="nav-item" asp-action="Logout" asp-controller="Account">Logout</a>
+                        </li>
+                    }
+                    else
+                   
+                    {
+                        <li>
+                            <a class="nav-item " asp-action="Login" asp-controller="Account">Login</a>
+                        </li>
+                        <li>
+                        <a class="nav-item " asp-action="Register" asp-controller="Account">Register</a>
+                        </li>
+                    }
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
